@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoopville | Ice Cream Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<header class="navbar">
+    <div class="logo">🍦 Scoopville</div>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#flavors">Flavors</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+
+</html>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">HAPPINESS IN EVERY SCOOP</p>
+
+            <h1>Life Is Better With Ice Cream</h1>
+
+            <p class="description">
+                Discover your favorite flavors, made with love
+                and the freshest ingredients.
+            </p>
+
+            <a href="#flavors" class="hero-button">Explore Flavors</a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1560008581-09826d1de69e?auto=format&fit=crop&w=900&q=80"
+                alt="Delicious ice cream cones"
+            >
+        </div>
+    </section>
+    
+<section class="flavors" id="flavors">
+    <div class="section-heading">
+        <p class="tagline">OUR MENU</p>
+        <h2>Discover Our Flavors</h2>
+        <p>Something delicious for everyone.</p>
+    </div>
+
+    <div class="flavor-container">
+
+        <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=500&q=80"
+                 alt="Vanilla ice cream">
+            <h3>Classic Vanilla</h3>
+            <p>Rich, creamy and timeless.</p>
+            <h4>₹99</h4>
+        </div>
+
+        <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=500&q=80"
+                 alt="Strawberry ice cream">
+            <h3>Strawberry Swirl</h3>
+            <p>Sweet berries in every scoop.</p>
+            <h4>₹119</h4>
+        </div>
+
+        <div class="flavor-card">
+            <img src="https://restimgs-magna-eu.s3.eu-west-1.amazonaws.com/stores/272/items/fb98b6babf7788b1b69837ed1577347b.jpg"
+                 alt="Chocolate ice cream">
+            <h3>Chocolate Dream</h3>
+            <p>Deep chocolate happiness.</p>
+            <h4>₹129</h4>
+        </div>
+
+        <div class="flavor-card">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pistachio_ice_cream.jpg"
+                alt="Pistachio ice cream">
+            <h3>Pistachio Bliss</h3>
+            <p>Nutty, smooth and delightful.</p>
+            <h4>₹139</h4>
+        </div>
+
+        <div class="flavor-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjJvWgnkMt7vnnqcboHYpTE4ABa5Wrv55N9DpoqX_vwovdiSnRXO4Hi1St&s=10"
+                 alt="Mango ice cream">
+            <h3>Mango Magic</h3>
+            <p>A tropical taste of summer.</p>
+            <h4>₹119</h4>
+        </div>
+
+        <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80"
+                 alt="Cookies and cream ice cream">
+            <h3>Cookies &amp; Cream</h3>
+            <p>Crunchy cookies meet creamy ice cream.</p>
+            <h4>₹139</h4>
+        </div>
+
+    </div>
+</section>
+
+<section class="weekend-special" id="locations">
+    <div class="special-image">
+        <img
+            src="https://www.thefoodlens.com/uploads/2017/09/FOMU_THE-FOOD-LENS_BRIAN-SAMUELS-PHOTOGRAPHY_AUGUST-0365-960x640.jpg"
+            alt="Delicious ice cream dessert"
+        >
+    </div>
+
+    <div class="special-content">
+        <p class="tagline">WEEKEND SPECIAL</p>
+        <h2>Make Your Weekend Sweeter!</h2>
+        <p>
+            Treat yourself to your favorite scoops.
+            Share a little happiness with every bite.
+        </p>
+        <a href="#contact" class="hero-button">Visit Us Today</a>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-content">
+        <h2>🍦 Scoopville</h2>
+        <p>Happiness in every scoop!</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#flavors">Flavors</a>
+            <a href="#locations">Locations</a>
+            <a href="mailto:hello@scoopville.com">Email Us</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Scoopville. All rights reserved.</p>
+    </div>
+</footer>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
+    const isExpanded = navLinks.classList.contains("active");
+    menuToggle.setAttribute("aria-expanded", isExpanded);
+    menuToggle.textContent = isExpanded ? "✕" : "☰";
+});
+
+// Close the menu after clicking a navigation link
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+
+</body>
